@@ -1,0 +1,652 @@
+Cat unicorn;
+Cat wizard;
+Cat chef;
+Cat duke;
+Cat angel;
+Cat c1;
+Cat c2;
+int pantalla = 0;
+int cat1;
+int cat2;
+PImage cuadrilatero;
+PFont inicio, varias;
+int turno = 0;
+int ganador = 0;
+int barra1 = 0;
+int barra2 = 0;
+
+void setup(){
+size(1200,900);
+
+//Img
+
+//cuadrilatero = loadImage("cuadrilatero.jpg");
+
+//Gatos
+unicorn = new Cat("Caticorn",200,8,7,15,2);
+wizard = new Cat("Wizcat",200,8,10,14,4);
+chef = new Cat("ChefiCat",200,7,9,14,1);
+duke = new Cat("Dukeow",200,8,10,12,3);
+angel = new Cat("Angelicat",200,6,13,10,0);
+
+//TEXTOS
+//subtitulo = createFont("yorkwhiteletter.ttf",100);
+//general = createFont("Pixeled.ttf",30);
+
+
+
+}
+
+void draw(){
+  
+switch(pantalla){
+  case 0:
+  starrt();
+  break;
+  
+  case 1:
+  how();
+  break;
+  
+  case 2:
+  selec1();
+  break;
+  
+  case 3:
+  selec2();
+  break;
+  
+  case 4:
+  game();
+  break;
+  
+  case 5:
+  result();
+  break;
+  
+  }
+}
+
+
+class Cat{
+  String nombre;
+  int vida;
+  int ataque;
+  int defensa;
+  int combo;
+  int tipo;
+
+  Cat(String nombre_, int vida_, int ataque_, int defensa_, int combo_,int tipo_)
+  {
+    nombre = nombre_;
+       vida = vida_;
+    ataque = ataque_;
+    defensa = defensa_;
+    combo = combo_;
+    tipo=tipo_;
+   
+  }
+
+void Dibujar(){
+    switch(tipo){
+    case 0:
+    
+    scale(0.7);
+    noStroke();
+
+//dibujin  
+noStroke();
+      
+ellipse(300, 300, 250, 350);
+ellipse (230,450,50,50);
+ellipse (370,450,50,50);
+ellipse (220,150,20,40);
+ellipse (370,150,20,40);
+fill (0);
+ellipse (240,200,30,30);
+ellipse (360,200,30,30);
+fill(150,125,0);
+ellipse (240,200,20,30);
+ellipse (360,200,20,30);
+translate(150,180);
+stroke(0);
+line(20,10,50,50);
+stroke(0);
+line(10,10,50,50);
+stroke(0);
+line(0,10,50,50);
+//
+stroke(0);
+line(20,10,50,50);
+noFill();
+stroke (100,102,0);
+strokeWeight(20);
+stroke(255);
+translate(210,170);
+bezier(100,1,10,10,100,90,15,80);
+  break;
+  
+  case 5:
+   noStroke();
+      
+ellipse(300, 300, 250, 350);
+ellipse (230,450,50,50);
+ellipse (370,450,50,50);
+ellipse (220,150,20,40);
+ellipse (370,150,20,40);
+fill (0);
+ellipse (240,200,30,30);
+ellipse (360,200,30,30);
+fill(150,125,0);
+ellipse (240,200,20,30);
+ellipse (360,200,20,30);
+translate(150,180);
+stroke(0);
+line(20,10,50,50);
+stroke(0);
+line(10,10,50,50);
+stroke(0);
+line(0,10,50,50);
+//
+stroke(0);
+line(20,10,50,50);
+noFill();
+stroke (100,102,0);
+strokeWeight(20);
+stroke(255);
+translate(210,170);
+bezier(100,1,10,10,100,90,15,80);
+  break;
+  
+   case 3:
+  noStroke();
+      
+ellipse(300, 300, 250, 350);
+ellipse (230,450,50,50);
+ellipse (370,450,50,50);
+ellipse (220,150,20,40);
+ellipse (370,150,20,40);
+fill (0);
+ellipse (240,200,30,30);
+ellipse (360,200,30,30);
+fill(150,125,0);
+ellipse (240,200,20,30);
+ellipse (360,200,20,30);
+translate(150,180);
+stroke(0);
+line(20,10,50,50);
+stroke(0);
+line(10,10,50,50);
+stroke(0);
+line(0,10,50,50);
+//
+stroke(0);
+line(20,10,50,50);
+noFill();
+stroke (100,102,0);
+strokeWeight(20);
+stroke(255);
+translate(210,170);
+bezier(100,1,10,10,100,90,15,80);
+  break;
+  
+   case 4:
+  noStroke();
+      
+ellipse(300, 300, 250, 350);
+ellipse (230,450,50,50);
+ellipse (370,450,50,50);
+ellipse (220,150,20,40);
+ellipse (370,150,20,40);
+fill (0);
+ellipse (240,200,30,30);
+ellipse (360,200,30,30);
+fill(150,125,0);
+ellipse (240,200,20,30);
+ellipse (360,200,20,30);
+translate(150,180);
+stroke(0);
+line(20,10,50,50);
+stroke(0);
+line(10,10,50,50);
+stroke(0);
+line(0,10,50,50);
+//
+stroke(0);
+line(20,10,50,50);
+noFill();
+stroke (100,102,0);
+strokeWeight(20);
+stroke(255);
+translate(210,170);
+bezier(100,1,10,10,100,90,15,80);
+  break;
+  
+  case 1:
+   noStroke();
+      
+ellipse(300, 300, 250, 350);
+ellipse (230,450,50,50);
+ellipse (370,450,50,50);
+ellipse (220,150,20,40);
+ellipse (370,150,20,40);
+fill (0);
+ellipse (240,200,30,30);
+ellipse (360,200,30,30);
+fill(150,125,0);
+ellipse (240,200,20,30);
+ellipse (360,200,20,30);
+translate(150,180);
+stroke(0);
+line(20,10,50,50);
+stroke(0);
+line(10,10,50,50);
+stroke(0);
+line(0,10,50,50);
+//
+stroke(0);
+line(20,10,50,50);
+noFill();
+stroke (100,102,0);
+strokeWeight(20);
+stroke(255);
+translate(210,170);
+bezier(100,1,10,10,100,90,15,80);
+  break;
+  
+    }
+}
+}  
+      
+      
+     ////////////////////////////////////////////////
+     
+     
+     
+     void starrt(){
+background(0);
+fill(0);
+
+textSize(150);
+fill(250,0,250);
+textSize(120);
+text("MagiCAT",320,230);
+text("GAME",340,350);
+
+
+textSize(60);
+fill(170,0,170);
+text("MEOW MEOW MEOW MEOW MEOW MEOW MEOW",440,470);
+
+fill(255);
+textSize(30);
+text("PLAY",500,630);
+if(mousePressed){
+pantalla=1;
+  }
+}
+
+
+void how(){
+
+background(0);
+fill(#ff0000);
+
+text("Instructions",460,100);
+
+text("Magicat 1",110,210);
+
+text("Claw = A",110,300);
+text("Paw = S",110,400);
+text("Scratch",110,500);
+text("Combo  =  X",110,550);
+
+text("Magicat 2",880,210);
+
+text("Claw = L",880,300);
+text("Paw = K",880,400);
+text("Scratch",880,500);
+text("Combo  =  M",880,550);
+
+
+fill(255);
+textSize(15);
+text("OK!",410,670);
+if(mousePressed){
+    pantalla=2;
+  
+  }
+}
+
+void selec1(){
+
+background(0);
+fill(20,0,10);
+
+textSize(80);
+fill(90,0,90);
+text("Choose ur MagiCat",350,100);
+textSize(60);
+fill(255);
+text("Magicat",550,150);
+textSize(30);
+fill(100,0,100);
+text("Angelicat",50,500);
+text("Cheficat",274,500);
+text("Caticorn",470,500);
+text("Dukeow",790,500);
+text("Wizcat",1040,500);
+
+textSize(15);
+fill(255);
+text("pulsa 0",50,523);
+text("pulsa 1",274,523);
+text("pulsa 2",470,523);
+text("pulsa 3",790,523);
+text("pulsa 4",1040,523);
+fill(200);
+noStroke();
+
+
+if(keyPressed){
+  if(key == '0'){
+    c1 = angel;
+  cat1 = 0;
+  pantalla=3;  
+  }
+  else if(key == '1'){
+    c1 = chef;
+  cat1 = 1;
+  pantalla=3;  
+  }
+  else if(key == '2'){
+    c1 = unicorn;
+  cat1 = 2;
+  pantalla=3;  
+  }
+  else if(key == '3'){
+    c1 = duke; 
+    cat1 = 3;
+  pantalla=3;  
+  }
+  else if(key == '4'){
+    c1 = wizard;
+  cat1 = 4;
+  pantalla=3;  
+  }
+}
+
+}
+
+void selec2(){
+
+background(0);
+fill(#ff0000);
+
+textSize(80);
+text("Choose ur MagiCat",350,100);
+textSize(60);
+fill(255);
+text("MagiCat 2",550,150);
+textSize(50);
+fill(#ff0000);
+text("Angelicat",50,500);
+text("Cheficat",274,500);
+text("Caticorn",470,500);
+text("Dukeow",790,500);
+text("Wizcat",1040,500);
+
+textSize(15);
+fill(255);
+text("pulsa 5",50,523);
+text("pulsa 6",274,523);
+text("pulsa 7",470,523);
+text("pulsa 8",790,523);
+text("pulsa 9",1040,523);
+
+
+if(keyPressed){
+  if(key == '5'){
+    c2 = angel;
+ cat2 = 0;
+  pantalla=4;  
+  }
+  else if(key == '6'){
+    c2 = chef;
+  cat2 = 1;
+  pantalla=4;  
+  }
+  else if(key == '7'){
+    c2 = unicorn;
+  cat2 = 2;
+  pantalla=4;  
+  }
+  else if(key == '8'){
+    c2 = duke;
+  cat2 = 3;
+  pantalla=4;  
+  }
+  else if(key == '9'){
+    c2 = wizard;
+  cat2 = 4;
+  pantalla=4;  
+  }
+  }
+}
+
+void game(){
+  background(50);
+
+  if(cat1 == 0){
+    pushMatrix();
+    translate(50,100);
+    angel.Dibujar();  
+    popMatrix();
+  }
+  else if(cat1 == 1){
+    pushMatrix();
+    translate(50,100);
+    chef .Dibujar();  
+    popMatrix();
+  }
+  else if(cat1 == 2){
+    pushMatrix();
+    translate(50,100);
+    unicorn.Dibujar();  
+    popMatrix();
+  }
+  else if(cat1 == 3){
+    pushMatrix();
+    translate(50,100);
+    duke.Dibujar();  
+    popMatrix();
+  }
+  else if(cat1 == 4){
+    pushMatrix();
+    translate(50,100);
+    wizard.Dibujar();  
+    popMatrix();
+  }
+  if(cat2 == 0){
+    pushMatrix();
+    translate(650,100);
+    angel.Dibujar();  
+    popMatrix();  
+  }
+  else if(cat2 == 1){
+    pushMatrix();
+    translate(650,100);
+    chef.Dibujar();  
+    popMatrix();  
+  }
+  else if(cat2 == 2){
+    pushMatrix();
+    translate(650,100);
+    unicorn.Dibujar();  
+    popMatrix();  
+  }
+  else if(cat2 == 3){
+    pushMatrix();
+    translate(650,100);
+    duke.Dibujar();  
+    popMatrix();   
+  }
+  else if(cat2 == 4){
+    pushMatrix();
+    translate(650,100);
+    wizard.Dibujar();  
+    popMatrix();  
+  }
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+
+  if(turno == 0){
+    if(keyPressed){
+      if(key == 'a'){
+      c2.vida = c2.vida - c1.ataque;
+      turno = 1;
+      barra1++;
+      }
+      else if(key == 's'){
+      c2.vida = c2.vida - c1.defensa;
+      turno = 1;
+      barra1++;
+      }
+      if(c2.vida <= 0){
+      pantalla = 5;
+      }
+    }
+  }
+  
+  if(turno == 1){
+    if(keyPressed){
+      if(key == 'l'){
+      c1.vida = c1.vida - c2.ataque;
+      turno= 0 ;
+      barra2++;
+      }
+      else if(key == 'k'){
+      c1.vida = c1.vida - c2.defensa;
+      turno = 0;
+      barra2++;
+      }
+      if(c1.vida <= 0){
+      pantalla = 5;
+      }
+    }
+  }
+  
+  if(barra1 == 4){
+    fill(120,0,120);
+    text("COMBO",200,100);
+    if(keyPressed){
+      if(key == 'x'){
+      c2.vida = c2.vida - c1.combo;
+      turno = 1;
+      barra1 = 0;
+      }
+      if(c2.vida <= 0){
+      pantalla = 5;
+   }
+}
+}
+  if(barra2 == 4){
+    fill(150,0,50);
+    text("COMBO",960,100);
+    if(keyPressed){
+      if(key == 'm'){
+      c1.vida = c1.vida - c2.combo;
+      turno = 0;
+      barra2 = 0;
+      }
+      if(c1.vida <= 0){
+      pantalla = 5;
+   }
+}
+}
+    if(turno == 0){
+    fill(255);
+    text("DO IT!",10,100);
+    }
+    else {
+    fill(255);
+    text("REVENGE!!",770,100);
+    }
+    
+    if(turno == 0){
+    fill(#4682B4);  
+    }
+    else{
+    fill(#191970);
+    }
+    quad(0,0,0,70,330,70,350,0);
+    
+    if(turno == 1){
+    fill(#98fb98);
+    }
+    else{
+    fill(#006400);
+    }
+    quad(760,0,760,70,1099,70,1110,0);
+    
+    fill(255);
+    textSize(20);
+    text(c1.nombre,10,30);
+    text(c2.nombre,770,30);
+    if(c1.vida >= 0 && c1.vida <= 70){
+    fill(#ff0000);
+    }
+    else if(c1.vida > 70 && c1.vida <= 130){
+    fill(#ffff00);
+    }
+    else{
+    fill(#00ff00);
+    }
+    rect(10,50,c1.vida*2.5,20);
+    
+    if(c2.vida >= 0 && c2.vida <= 70){
+    fill(#ff0000);
+    }
+    else if(c2.vida > 70 && c2.vida <= 130){
+    fill(#ffff00);
+    }
+    else{
+    fill(#00ff00);
+    }
+    rect(770,50,c2.vida*2.5,20);
+}
+
+
+
+void result(){
+  
+background(0);
+fill(#ff0000);
+rect(700,100,500,500);
+fill(#ff0000);
+
+textSize(90);
+text("Just a winner...",50,200);
+
+if(c1.vida > 0){
+textSize(100);
+text(c1.nombre,100,500);
+pushMatrix();
+translate(450,80);
+scale(2);
+c1.Dibujar();
+c1.Dibujar();
+popMatrix();
+}
+else {
+  textSize(100);
+text(c2.nombre,100,500);
+pushMatrix();
+translate(450,80);
+scale(2);
+c2.Dibujar();
+c2.Dibujar();
+popMatrix();
+}
+
+}
