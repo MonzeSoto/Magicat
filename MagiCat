@@ -8,7 +8,6 @@ Cat c2;
 int pantalla = 0;
 int cat1;
 int cat2;
-PImage cuadrilatero;
 PFont inicio, varias;
 int turno = 0;
 int ganador = 0;
@@ -20,7 +19,6 @@ size(1200,900);
 
 //Img
 
-//cuadrilatero = loadImage("cuadrilatero.jpg");
 
 //Gatos
 unicorn = new Cat("Caticorn",200,8,7,15,2);
@@ -28,11 +26,6 @@ wizard = new Cat("Wizcat",200,8,10,14,4);
 chef = new Cat("ChefiCat",200,7,9,14,1);
 duke = new Cat("Dukeow",200,8,10,12,3);
 angel = new Cat("Angelicat",200,6,13,10,0);
-
-//TEXTOS
-//subtitulo = createFont("yorkwhiteletter.ttf",100);
-//general = createFont("Pixeled.ttf",30);
-
 
 
 }
@@ -331,19 +324,19 @@ fill(255);
 text("Magicat",550,150);
 textSize(30);
 fill(100,0,100);
-text("Angelicat",50,500);
-text("Cheficat",274,500);
-text("Caticorn",470,500);
-text("Dukeow",790,500);
-text("Wizcat",1040,500);
+text("Angelicat",50,300);
+text("Cheficat",274,300);
+text("Caticorn",470,300);
+text("Dukeow",790,300);
+text("Wizcat",1040,300);
 
 textSize(15);
 fill(255);
-text("pulsa 0",50,523);
-text("pulsa 1",274,523);
-text("pulsa 2",470,523);
-text("pulsa 3",790,523);
-text("pulsa 4",1040,523);
+text(" 0",50,353);
+text(" 1",274,353);
+text(" 2",470,35523);
+text(" 3",790,353);
+text(" 4",1040,353);
 fill(200);
 noStroke();
 
@@ -390,19 +383,19 @@ fill(255);
 text("MagiCat 2",550,150);
 textSize(50);
 fill(#ff0000);
-text("Angelicat",50,500);
-text("Cheficat",274,500);
-text("Caticorn",470,500);
-text("Dukeow",790,500);
-text("Wizcat",1040,500);
+text("Angelicat",50,300);
+text("Cheficat",274,300);
+text("Caticorn",470,300);
+text("Dukeow",790,300);
+text("Wizcat",1040,300);
 
 textSize(15);
 fill(255);
-text("pulsa 5",50,523);
-text("pulsa 6",274,523);
-text("pulsa 7",470,523);
-text("pulsa 8",790,523);
-text("pulsa 9",1040,523);
+text(" 5",50,353);
+text(" 6",274,353);
+text(" 7",470,353);
+text(" 8",790,353);
+text(" 9",1040,353);
 
 
 if(keyPressed){
@@ -574,18 +567,18 @@ void game(){
     }
     
     if(turno == 0){
-    fill(#4682B4);  
+    fill(90,0,90);  
     }
     else{
-    fill(#191970);
+    fill(80,0,80);
     }
     quad(0,0,0,70,330,70,350,0);
     
     if(turno == 1){
-    fill(#98fb98);
+    fill(70,0,70);
     }
     else{
-    fill(#006400);
+    fill(60,0,60);
     }
     quad(760,0,760,70,1099,70,1110,0);
     
@@ -594,24 +587,24 @@ void game(){
     text(c1.nombre,10,30);
     text(c2.nombre,770,30);
     if(c1.vida >= 0 && c1.vida <= 70){
-    fill(#ff0000);
+    fill(90,0,90);
     }
     else if(c1.vida > 70 && c1.vida <= 130){
-    fill(#ffff00);
+    fill(80,0,80);
     }
     else{
-    fill(#00ff00);
+    fill(70,0,70);
     }
     rect(10,50,c1.vida*2.5,20);
     
     if(c2.vida >= 0 && c2.vida <= 70){
-    fill(#ff0000);
+    fill(90,0,90);
     }
     else if(c2.vida > 70 && c2.vida <= 130){
-    fill(#ffff00);
+    fill(80,0,80);
     }
     else{
-    fill(#00ff00);
+    fill(70,0,70);
     }
     rect(770,50,c2.vida*2.5,20);
 }
@@ -623,9 +616,10 @@ void result(){
 background(0);
 fill(#ff0000);
 rect(700,100,500,500);
-fill(#ff0000);
+fill(90,0,90);
 
 textSize(90);
+fill(150,0,150);
 text("Just a winner...",50,200);
 
 if(c1.vida > 0){
